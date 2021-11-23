@@ -15,7 +15,7 @@ function App() {
   const getRecipeInfo = async () => {
     var result = await Axios.get(url);
     setrecipes(result.data.hits);
-    console.log(result.data.hits);
+    console.log(result);
   };
 
   const onSubmit = (e) => {
@@ -41,7 +41,7 @@ function App() {
       <div className="app__recipes">
         {recipes !== [] &&
           recipes.map((recipe) => {
-            return <RecipeTile recipe={recipe} />;
+            return <RecipeTile recipe={recipe} />; //in this line first recipe is imported from tile like porps
           })}
       </div>
     </div>
